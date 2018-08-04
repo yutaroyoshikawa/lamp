@@ -1,0 +1,37 @@
+version: '3'
+services:
+    nginx:
+        build: ./nginx
+        ports:
+            - "8080:80"
+        depends_on:
+            - php
+    php:
+        build: ./php
+        volumes:
+            - ./htdocs:/var/www/html 
+    mariadb:
+        build: ./mariadb
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_USER: hoge
+            MYSQL_PASSWORD: password
+        volumes:
+            - db:/var/lib/mysql
+    phpmyadmin:
+        build: ./phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mariadb
+            - PMA_USER=root
+            - PMA_PASSWORD=password
+        links:
+            - mariadb
+        ports:
+            - 4040:80
+        volumes:
+            - /sessions
+volumes:
+  db:
