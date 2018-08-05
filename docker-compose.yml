@@ -6,6 +6,8 @@ services:
             - "8080:80"
         depends_on:
             - php
+        volumes:
+            - ./nginx/logs:/var/log/nginx
     php:
         build: ./php
         volumes:
@@ -32,6 +34,6 @@ services:
         ports:
             - 4040:80
         volumes:
-            - /sessions
+            - "./phpmyadmin/sessions:/sessions"
 volumes:
   db:
