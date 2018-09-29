@@ -16,5 +16,5 @@ docker-compose up -d
 - PHPMyAdmin 4040
 
 ## MariaDB
-Default root password
+### Default root password
 password: password
