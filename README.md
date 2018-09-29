@@ -10,11 +10,11 @@
 docker-compose up -d
 ```
 
-##Ports
+## Ports
 - nginx 8080
 - MariaDB 13306
 - PHPMyAdmin 4040
 
-##MariaDB
+## MariaDB
 Default root password
 password: password
