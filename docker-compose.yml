@@ -15,6 +15,7 @@ services:
         build: ./php
         volumes:
             - ./htdocs:/var/www/html 
+            - ./php/php.ini:/usr/local/etc/php/php.ini
     mariadb:
         build: ./mariadb
         ports:

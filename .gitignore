@@ -1,4 +1,3 @@
-nginx/conf/*
 phpmyadmin/sessions/*
 nginx/logs/*
 htdocs/*
