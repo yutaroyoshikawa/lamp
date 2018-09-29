@@ -8,6 +8,9 @@ services:
             - php
         volumes:
             - ./nginx/logs:/var/log/nginx
+            - ./htdocs:/var/www/html 
+            - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
     php:
         build: ./php
         volumes:
